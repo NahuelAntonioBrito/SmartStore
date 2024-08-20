@@ -1,0 +1,5 @@
+{
+  "require": ["esm"],
+  "extensions": ["js"],
+  "spec": "test/**/*.spec.js"
+}

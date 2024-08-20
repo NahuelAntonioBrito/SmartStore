@@ -74,10 +74,15 @@ class ArticuleController {
     }
   }
 
-  // Agregar un nuevo artículo
   async addArticule(req, res) {
     try {
       const articule = req.body;
+
+      // Validación básica (puedes agregar más validaciones según sea necesario)
+      if (!articule.descripcion || !articule.unidad_x_bulto) {
+        return res.status(400).json({ message: "Invalid articule data" });
+      }
+
       const newArticule = await ArticuleService.addArticule(articule);
       res.status(201).json(newArticule);
     } catch (error) {

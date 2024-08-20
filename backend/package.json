@@ -5,7 +5,8 @@
   "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "cross-env NODE_ENV=test mocha test/supertest.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,13 @@
     "express-compression": "^1.0.2",
     "nodemon": "^3.1.4",
     "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "esm": "^3.2.25",
+    "mocha": "^10.7.3",
+    "sinon": "^18.0.0",
+    "supertest": "^7.0.0"
   }
 }

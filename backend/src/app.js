@@ -16,8 +16,12 @@ app.use(
 );
 
 app.use("/api/articules", articulesRouter);
-try {
-  app.listen(PORT, () => console.log(`SERVER UP, listen on port ${PORT}`));
-} catch (error) {
-  console.error(error);
+export default app;
+
+if (process.env.NODE_ENV !== "test") {
+  try {
+    app.listen(PORT, () => console.log(`SERVER UP, listen on port ${PORT}`));
+  } catch (error) {
+    console.error(error);
+  }
 }
